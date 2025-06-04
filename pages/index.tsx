@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import type { CSSProperties } from 'react';
 
 export default function Home() {
   return (
@@ -11,27 +12,27 @@ export default function Home() {
         />
       </Head>
 
-      <header style={styles.header}>
-        <h1 style={styles.logo}>TRIVENDEUX AND CO.</h1>
+      <header style={styles.header as CSSProperties}>
+        <h1 style={styles.logo as CSSProperties}>TRIVENDEUX AND CO.</h1>
         <nav>
-          <a href="#" style={styles.navLink}>Home</a>
-          <a href="/about" style={styles.navLink}>About</a>
-          <a href="#services" style={styles.navLink}>Services</a>
-          <a href="#contact" style={styles.navLink}>Contact</a>
+          <a href="#" style={styles.navLink as CSSProperties}>Home</a>
+          <a href="/about" style={styles.navLink as CSSProperties}>About</a>
+          <a href="#services" style={styles.navLink as CSSProperties}>Services</a>
+          <a href="#contact" style={styles.navLink as CSSProperties}>Contact</a>
         </nav>
       </header>
 
-      <section className="hero" style={styles.hero}>
+      <section className="hero" style={styles.hero as CSSProperties}>
         <h2>Financial Consulting</h2>
         <p>We provide expert financial advice to help you achieve your business goals.</p>
-        <button onClick={() => window.location.href='#contact'}>Get Started</button>
+        <button onClick={() => window.location.href = '#contact'}>Get Started</button>
       </section>
 
-      <section id="services" className="services" style={styles.services}>
+      <section id="services" className="services" style={styles.services as CSSProperties}>
         <h3>Our Services</h3>
-        <div style={styles.serviceGrid}>
+        <div style={styles.serviceGrid as CSSProperties}>
           {services.map((service, index) => (
-            <div key={index} style={styles.serviceBox}>
+            <div key={index} style={styles.serviceBox as CSSProperties}>
               <h4>{service.title}</h4>
               <p>{service.desc}</p>
             </div>
@@ -39,13 +40,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cta" style={styles.cta} id="contact">
+      <section className="cta" style={styles.cta as CSSProperties} id="contact">
         <h4>Ready to reach new heights?</h4>
         <p>Contact us today to schedule a consultation.</p>
         <button>Contact Us</button>
       </section>
 
-      <footer style={styles.footer}>
+      <footer style={styles.footer as CSSProperties}>
         &copy; 2025 Summit Financial Consulting. All rights reserved. | Email: contact@summitfc.com | Phone: (123) 456-7890
       </footer>
     </>
